@@ -112,6 +112,34 @@ h3 {font-size: 2rem;}
 .card {
     background-color: #E8CD40;
     color: rgb(53, 49, 49);
+    padding: 5%;
+}
+
+.img-container {
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7%;
+}
+
+.img-container > img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.card h4 {
+    margin: 10px 0;
+    font-size: 1.4rem;
+}
+
+.card p {
+    width: 100%;
+    font-size: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .card h1 {
@@ -126,6 +154,7 @@ h3 {font-size: 2rem;}
     gap: 12px;               /* Espacio entre el texto y el logo */
     width: 50%;             /* Ocupa todo el ancho de la card */
     padding: 12px;
+    margin: 0 auto;
     
     /* Estilo visual (colores base para que los cambies luego) */
     background-color: #915C35; 
@@ -154,17 +183,33 @@ h3 {font-size: 2rem;}
 .btn-code:hover {
     background-color: #1f1d1c;
 }
+.skills-slider {
+    overflow: hidden; /* Esconde lo que sale de la pantalla */
+    padding: 20px 0;
+    background: transparent;
+    width: 100%;
+}
+.skills {
+    display: grid;
+    /* Crea columnas de 80px que se ajustan solas al ancho de la pantalla */
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); 
+    /* Esta es la separación que buscas */
+    gap: 40px; 
+    justify-items: center;
+    align-items: center;
+    padding: 40px 0;
+}
 
 .skills img {
-    width: 20%;
+    width: 60%; /* Tamaño de los iconos */
     height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.skills {
-    display: flex;
-    justify-content: space-between;
+.skills img:hover {
+    transform: scale(1.2); /* Efecto visual al pasar el ratón */
 }
-
 @media (max-width: 700px) {
     body {
         font-size: 0.25vw;     
