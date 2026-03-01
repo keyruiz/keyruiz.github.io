@@ -10,7 +10,7 @@ body{
     color: white;
     font-size: calc(0.5vw + 1vh);
 }
-
+/*
 header { 
     width: 100%;
     height: 7vh;
@@ -45,7 +45,22 @@ header img {
 a:hover {
     background-color:#ffffff;
     color: rgb(53, 49, 49);
+}*/
+
+.navbar-nav .nav-link {
+    display: inline-block;    /* ¡Clave! Hace que el ancho sea el del texto */
+    width: auto;              /* Evita que se estire al 100% */
+    padding: 8px 20px;        /* Espacio interno para que el blanco no toque las letras */
+    border-radius: 8px;       /* Bordes redondeados para que el hover se vea elegante */
+    transition: all 0.3s ease;
 }
+
+/* Tu hover corregido */
+.nav-link:hover {
+    background-color: #ffffff !important;
+    color: rgb(53, 49, 49) !important;
+}
+
 
 .presentación{
     text-align: center;
@@ -54,7 +69,6 @@ a:hover {
 .presentación h1{
     color: #E8CD40
 }
-
 main {
     margin: 0 15%;
 }
@@ -66,12 +80,29 @@ h1{
     font-weight: normal;
 }
 
-h2 {
-    color: #E79E3D;
-    font-size: 1.5rem;
+.secciones h2 {
+    color: #E79E3D; /* Ahora el texto ya tiene tu color base */
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 2%;
+    margin-top: 3%;
+    /* EFECTO SUAVE: Solo dos capas de sombra */
+    text-shadow: 
+        0 0 8px rgba(231, 158, 61, 0.4),  /* Brillo pegado a la letra */
+        0 0 15px rgba(231, 158, 61, 0.2); /* Halo muy tenue */
+    
+    transition: text-shadow 0.3s ease;
 }
 
-h3 {font-size: 2rem;}
+/* Al pasar el mouse, un ligero aumento de intensidad */
+.secciones h2:hover {
+    text-shadow: 
+        0 0 10px rgba(231, 158, 61, 0.6), 
+        0 0 20px rgba(154, 99, 27, 0.3);
+}
+
+h3 {font-size: 2rem; }
 /* Estilo general (Pantallas grandes) */
 .sobremi {
     display: grid;
@@ -99,35 +130,52 @@ h3 {font-size: 2rem;}
     height: 100%;
 }*/
 
-.proyectos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5%;
+#mifoto {
+     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
 .skills {
     display: flex;
 }
 
+.proyectos {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 5%;
+}
+
+.proyectos p {color: #331a01;}
+.proyectos h4 {font-weight: bold; text-align: center;}
 .card {
-    background-color: #E8CD40;
-    color: rgb(53, 49, 49);
-    padding: 5%;
+    background-color: #E8CD40; 
+    border-radius: 12px;     
+    padding: 20px;
+    width: 62%;      
+    gap: 15px;
+    transition: all 0.3s ease; 
+    border: 2px solid transparent; 
+}
+
+.card:hover {
+    border-color: #ffffff; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
+                0 0 5px rgba(255, 255, 255, 0.5);
+    transform: translateY(-5px); 
 }
 
 .img-container {
     width: 100%;
-    height: 40%;
+    aspect-ratio: 16 / 9;    
+    background-color: #000;   
+    border-radius: 4px;
     overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 7%;
 }
 
-.img-container > img {
-    height: 100%;
+.img-container img {
     width: 100%;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card h4 {
@@ -146,42 +194,35 @@ h3 {font-size: 2rem;}
     color: rgb(53, 49, 49);
 }
   
-.btn-code {
-    /* Layout */
+/* Usamos el padre para asegurar que esta regla mande */
+.card .btn-code {
+    text-align: center;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centra el contenido globalmente */
-    gap: 12px;               /* Espacio entre el texto y el logo */
-    width: 50%;             /* Ocupa todo el ancho de la card */
-    padding: 12px;
+    justify-content: center;
     margin: 0 auto;
-    
-    /* Estilo visual (colores base para que los cambies luego) */
+    gap:4%;
+    width: 70%;
+    padding: 3%;
     background-color: #915C35; 
     color: #ffffff;
     border: none;
-    border-radius: 30px;      /* Bordes ligeramente redondeados como en Figma */
-    
-    /* Tipografía */
-    font-size: 16px;
-    font-weight: 500;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+    transition: all 0.3s ease; /* Cambiamos 'background' por 'all' */
 }
 
-/* Estilo para la imagen dentro del botón */
+/* Hover específico del botón */
+.card .btn-code:hover {
+    background-color: #331a01 !important; /* Un marrón más oscuro para que se note el cambio */
+    transform: scale(1.05); /* Que crezca un poquito al tocarlo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombrita para que se sienta que se "hunde" */
+}
+
 .icon-github {
     width: 20px;
-    height: 20px;
-    object-fit: contain;
-    /* Si el SVG original es negro y tu fondo es oscuro, 
-       esta línea lo vuelve blanco: */
-    filter: brightness(0) invert(1); 
-}
-
-/* Efecto al pasar el ratón */
-.btn-code:hover {
-    background-color: #1f1d1c;
+    filter: brightness(0) invert(1); /* Hace el icono blanco */
 }
 .skills-slider {
     overflow: hidden; /* Esconde lo que sale de la pantalla */
@@ -201,7 +242,7 @@ h3 {font-size: 2rem;}
 }
 
 .skills img {
-    width: 60%; /* Tamaño de los iconos */
+    width: 80%; /* Tamaño de los iconos */
     height: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
@@ -215,6 +256,17 @@ h3 {font-size: 2rem;}
         font-size: 0.25vw;     
         font-size: 0.5vh;
     }
+
+    header {
+        font-size: 1rem;
+    }
+
+    navbar-nav {
+        text-align: right;    /* Alinea los enlaces a la derecha como tenías */
+    }
+    .nav-item {
+        margin-bottom: 5px;   /* Separa un poquito los botones entre sí */
+    }
     .sobremi {
         grid-template-columns: 1fr; /* Una sola columna */
         grid-template-rows: auto auto; /* Altura automática según el contenido */
@@ -222,6 +274,7 @@ h3 {font-size: 2rem;}
         text-align: center; /* Opcional: centra el texto en móvil */
     }
 
+    .card {width: 100%}
     .foto {
         display: flex;
         justify-content: center; /* Centra la foto cuando el texto está arriba */
@@ -232,9 +285,4 @@ h3 {font-size: 2rem;}
         max-width: 300px; /* Tamaño máximo controlado en móvil */
     }
 
-    .proyectos {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-    }
 }

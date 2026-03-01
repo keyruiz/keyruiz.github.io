@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <title>Keyra Ruiz</title>
 </head>
 <body>
+    <!--
     <header>
         <img src="img/logo.png" alt="Mi logo">
         <nav>
@@ -14,13 +17,39 @@
             <a href="#proyectos" class="enlaces">Proyectos</a>
             <a href="#skills" class="enlaces">Habilidades</a>
         </nav>
+    </header>-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #492713;">
+            <section class="container">
+                <a class="navbar-brand" href="#">
+                <img src="img/logo.png" alt="Mi logo" height="40">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <section class="collapse navbar-collapse text-end" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4" href="#sobreMi">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4" href="#proyectos">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white px-4" href="#skills">Habilidades</a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
     </header>
     <main>
         <article class="presentación">
             <h1>Keyra Ruiz</h1>
             <h3>Desarrolladora Web en proceso</h3>
         </article>
-        <section class="secciones" id="sobreMi" class=>
+        <section class="secciones" id="sobreMi">
             <h2>Sobre mí</h2>
             <section class="sobremi">
                 <article>
@@ -37,37 +66,22 @@
                 <article class="foto">
                     <img id="mifoto" src="img/yo.jpg" alt="">
                 </article>
-            </section>  
-        </section>
+        </section>  
         <section class="secciones" id="proyectos">
             <h2>Proyectos</h2>
             <section class="proyectos">
                 <section class="card">
-                    <div class="img-container"><img src="img/img.jpg" alt="proyecto2"></div>
-
-                    <h4>
-                        Nombre1
-                    </h4>
-                    <p>
-                    </p>
-                    <button class="btn-code">
-                        <span>View code</span>
-                        <img src="img/svg/github.svg" alt="GitHub" class="icon-github">
-                      </button>
-                </section>
-                <section class="card">
-                    <div class="img-container"><img src="img/img.jpg" alt="proyecto2"></div>
+                    <div class="img-container"><img src="img/proyectoCrochet.png" alt="proyecto2"></div>
                     
                     <h4>
-                        Nombre1
+                        Gestión de Patrones Crochet
                     </h4>
                     <p>
-                        textooooooooooooooooooo
+                        Aplicación Full-Stack para la organización de patrones de tejido, arquitectura basada en microservicios y orquestada con Docker. Implementa una API REST en Node.js, servidor Nginx para el frontend y persistencia real de datos con PostgreSQL mediante volúmenes.
                     </p>
                     <button class="btn-code">
                         <span>View code</span>
-                        <img src="img/svg/github.svg" alt="GitHub" class="icon-github">
-                      </button>
+                    </button>
                 </section>
             </section>
         </section>
@@ -85,5 +99,6 @@
             </section>
         </section>
     </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
