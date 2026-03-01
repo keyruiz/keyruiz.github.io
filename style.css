@@ -10,6 +10,17 @@ body{
     color: white;
     font-size: calc(0.5vw + 1vh);
 }
+
+main {
+    margin: 0 15%;
+}
+
+h1{
+    color: #E8CD40;
+    font-size: 4rem;
+    font-family: 'Bitcount Single';
+    font-weight: normal;
+}
 /*
 header { 
     width: 100%;
@@ -47,21 +58,21 @@ a:hover {
     color: rgb(53, 49, 49);
 }*/
 
+/*HEADER*/
 .navbar-nav .nav-link {
-    display: inline-block;    /* ¡Clave! Hace que el ancho sea el del texto */
-    width: auto;              /* Evita que se estire al 100% */
-    padding: 8px 20px;        /* Espacio interno para que el blanco no toque las letras */
-    border-radius: 8px;       /* Bordes redondeados para que el hover se vea elegante */
+    display: inline-block; 
+    width: auto;              
+    padding: 8px 20px;        
+    border-radius: 8px;     
     transition: all 0.3s ease;
 }
 
-/* Tu hover corregido */
 .nav-link:hover {
     background-color: #ffffff !important;
     color: rgb(53, 49, 49) !important;
 }
 
-
+/*TÍTULO*/
 .presentación{
     text-align: center;
 }
@@ -69,33 +80,23 @@ a:hover {
 .presentación h1{
     color: #E8CD40
 }
-main {
-    margin: 0 15%;
-}
 
-h1{
-    color: #E8CD40;
-    font-size: 4rem;
-    font-family: 'Bitcount Single';
-    font-weight: normal;
-}
-
+/*Para todas las partes*/
 .secciones h2 {
-    color: #E79E3D; /* Ahora el texto ya tiene tu color base */
+    color: #E79E3D;
     text-align: center;
     font-size: 2.2rem;
     font-weight: 600;
     margin-bottom: 2%;
     margin-top: 3%;
-    /* EFECTO SUAVE: Solo dos capas de sombra */
+    /*Efecto neon*/
     text-shadow: 
-        0 0 8px rgba(231, 158, 61, 0.4),  /* Brillo pegado a la letra */
-        0 0 15px rgba(231, 158, 61, 0.2); /* Halo muy tenue */
-    
+        0 0 8px rgba(231, 158, 61, 0.4),  
+        0 0 15px rgba(231, 158, 61, 0.2); 
     transition: text-shadow 0.3s ease;
 }
 
-/* Al pasar el mouse, un ligero aumento de intensidad */
+/*Subtitulos se iluminan un poco más*/
 .secciones h2:hover {
     text-shadow: 
         0 0 10px rgba(231, 158, 61, 0.6), 
@@ -103,12 +104,14 @@ h1{
 }
 
 h3 {font-size: 2rem; }
-/* Estilo general (Pantallas grandes) */
+
+
+/*SOBRE MÍ*/
 .sobremi {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     align-items: center;
-    gap: 5%; /* Ajustado un poco para que no haya tanto hueco */
+    gap: 5%;
     font-size: 1.35rem;
 }
 
@@ -116,13 +119,12 @@ h3 {font-size: 2rem; }
     text-align: left;
 }
 
-/* La clave para la foto proporcional */
 #mifoto {
-    width: 100%;          /* Que ocupe el ancho de su contenedor (el article) */
-    max-width: 400px;     /* Para que no crezca infinito en pantallas enormes */
-    height: auto;         
-    border-radius: 10px;
-    object-fit: cover;    /* Si quisieras forzar un tamaño cuadrado, esto evitaría que se estire */
+    width: 100%;          
+    height: auto;     
+    border-radius: 3%;
+    object-fit: cover;  
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 /*
 #mifoto {
@@ -130,13 +132,8 @@ h3 {font-size: 2rem; }
     height: 100%;
 }*/
 
-#mifoto {
-     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-}
 
-.skills {
-    display: flex;
-}
+
 
 .proyectos {
     display: flex;
@@ -145,8 +142,6 @@ h3 {font-size: 2rem; }
     gap: 5%;
 }
 
-.proyectos p {color: #331a01;}
-.proyectos h4 {font-weight: bold; text-align: center;}
 .card {
     background-color: #E8CD40; 
     border-radius: 12px;     
@@ -156,14 +151,14 @@ h3 {font-size: 2rem; }
     transition: all 0.3s ease; 
     border: 2px solid transparent; 
 }
-
 .card:hover {
-    border-color: #ffffff; 
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
-                0 0 5px rgba(255, 255, 255, 0.5);
-    transform: translateY(-5px); 
-}
+    border-color: #ffb53f; 
+    box-shadow: 0 0 20px rgba(255, 157, 0, 0.6), 
+                0 0 10px rgba(139, 69, 19, 0.4); 
 
+    transform: translateY(-8px); 
+    transition: all 0.3s ease-in-out;
+}
 .img-container {
     width: 100%;
     aspect-ratio: 16 / 9;    
@@ -181,6 +176,8 @@ h3 {font-size: 2rem; }
 .card h4 {
     margin: 10px 0;
     font-size: 1.4rem;
+    color: #331a01;
+    font-weight: bold;
 }
 
 .card p {
@@ -188,13 +185,8 @@ h3 {font-size: 2rem; }
     font-size: 1rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
-}
+} 
 
-.card h1 {
-    color: rgb(53, 49, 49);
-}
-  
-/* Usamos el padre para asegurar que esta regla mande */
 .card .btn-code {
     text-align: center;
     display: flex;
@@ -209,32 +201,21 @@ h3 {font-size: 2rem; }
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease; /* Cambiamos 'background' por 'all' */
+    font-size: 1rem;
+    transition: all 0.3s ease; 
 }
 
-/* Hover específico del botón */
 .card .btn-code:hover {
-    background-color: #331a01 !important; /* Un marrón más oscuro para que se note el cambio */
-    transform: scale(1.05); /* Que crezca un poquito al tocarlo */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombrita para que se sienta que se "hunde" */
+    background-color: #331a01 !important; 
+    transform: scale(1.05); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
 }
 
-.icon-github {
-    width: 20px;
-    filter: brightness(0) invert(1); /* Hace el icono blanco */
-}
-.skills-slider {
-    overflow: hidden; /* Esconde lo que sale de la pantalla */
-    padding: 20px 0;
-    background: transparent;
-    width: 100%;
-}
+.card a {text-decoration: none;}
+
 .skills {
     display: grid;
-    /* Crea columnas de 80px que se ajustan solas al ancho de la pantalla */
     grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); 
-    /* Esta es la separación que buscas */
     gap: 40px; 
     justify-items: center;
     align-items: center;
@@ -242,16 +223,18 @@ h3 {font-size: 2rem; }
 }
 
 .skills img {
-    width: 80%; /* Tamaño de los iconos */
+    width: 80%; 
     height: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .skills img:hover {
-    transform: scale(1.2); /* Efecto visual al pasar el ratón */
+    transform: scale(1.2); 
 }
-@media (max-width: 700px) {
+
+
+@media (max-width: 769px) {
     body {
         font-size: 0.25vw;     
         font-size: 0.5vh;
@@ -261,28 +244,31 @@ h3 {font-size: 2rem; }
         font-size: 1rem;
     }
 
+    .secciones h2 {margin: 8%;}
+
     navbar-nav {
-        text-align: right;    /* Alinea los enlaces a la derecha como tenías */
+        text-align: right;   
     }
+
     .nav-item {
-        margin-bottom: 5px;   /* Separa un poquito los botones entre sí */
+        margin-bottom: 5px;   
     }
+
     .sobremi {
-        grid-template-columns: 1fr; /* Una sola columna */
-        grid-template-rows: auto auto; /* Altura automática según el contenido */
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
         gap: 30px;
-        text-align: center; /* Opcional: centra el texto en móvil */
+        text-align: center; 
     }
 
     .card {width: 100%}
+    
     .foto {
         display: flex;
-        justify-content: center; /* Centra la foto cuando el texto está arriba */
+        justify-content: center; 
     }
 
     #mifoto {
-        width: 80%; /* En móvil, que no pegue a los bordes si no quieres */
-        max-width: 300px; /* Tamaño máximo controlado en móvil */
+        width: 80%;
     }
-
 }
